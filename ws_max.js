@@ -1,7 +1,17 @@
+// Node system module
+
 const fs = require("fs");
+
+// Max module passed by Max Node environment
+
 const maxApi = require("max-api");
+
+// Modules installed with npm
+
 const parseDataUrl = require("parse-data-url");
 const Websocket = require("ws");
+
+// Set up Websocket endpoint
 
 const wsUrl = "wss://ws-fggq5.ondigitalocean.app";
 
@@ -14,13 +24,20 @@ const ws = new Websocket(wsUrl);
 const interval = setInterval(() => ws.ping(() => {}), 15 * 1000);
 interval.unref();
 
+// Handle the "subscribe" message from Max
+
 maxApi.addHandler("subscribe", (channel, type, userId = null) => {
+  // Output the status from the first outlet of node.script object in Max
+
   maxApi.outlet("status", { status: "subscribed" });
+
+  // Handle the incoming websocket message
 
   ws.on("message", (data) => {
     // Parse the message that can be text or a binary into a JSON
 
     const parsedData = safeJsonParse(data);
+
     // Check it the message is matching the conditions we passed to it
 
     if (
@@ -39,13 +56,18 @@ maxApi.addHandler("subscribe", (channel, type, userId = null) => {
         parsedData.value = filename;
       }
 
-      // Pass the the websocket message to Max
+      // Output the message from the second outlet of node.script object in Max
       maxApi.outlet("message", parsedData);
     }
   });
 });
 
+// Handle the "publish" message from Max
+
 maxApi.addHandler("publish", (channel, userId, userName, type, value) => {
+  // Special handling for images: on "IMAGE" type we read the image path
+  // passed from Max ("value"), read the file and encode it as DataURL
+
   if (type === "IMAGE") {
     const encoding = "base64";
     const data = fs.readFileSync(`${__dirname}/${value}`).toString(encoding);
@@ -53,6 +75,9 @@ maxApi.addHandler("publish", (channel, userId, userName, type, value) => {
     const dataUrl = `data:${mimeType};${encoding},${data}`;
     value = dataUrl;
   }
+
+  // Send websocket message
+
   ws.send(
     createMessage({
       channel: channel,
@@ -83,6 +108,8 @@ const createMessage = (message) => {
     ...message,
   });
 };
+
+// Helper function to parse string and binaries into JSON
 
 const safeJsonParse = (str) => {
   try {

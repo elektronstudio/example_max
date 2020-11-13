@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 92.0, 86.0, 1134.0, 751.0 ],
+		"rect" : [ 32.0, 107.0, 1313.0, 751.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -46,7 +46,6 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 175.5, 10.0, 271.0, 33.0 ],
-					"presentation_linecount" : 2,
 					"text" : "2. Visit https://elektron.studio/residence and turn on your camera"
 				}
 
@@ -54,11 +53,12 @@
 , 			{
 				"box" : 				{
 					"id" : "obj-9",
+					"linecount" : 2,
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 554.0, 295.0, 128.0, 20.0 ],
-					"text" : "6. Turn on the toggle"
+					"patching_rect" : [ 554.0, 295.0, 128.0, 33.0 ],
+					"text" : "5. Turn on the toggle to show images"
 				}
 
 			}
@@ -70,8 +70,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 445.5, 100.5, 486.0, 47.0 ],
-					"presentation_linecount" : 4,
-					"text" : "5. Turn on the toggle and edit this message to send a message to elektron.live channel\n\npublish *channel* *userid* *username* *messagecontent* *messagetype*"
+					"text" : "6. Turn on the toggle and edit this message to send a message to elektron.live channel\n\npublish *channel* *userid* *username* *messagecontent* *messagetype*"
 				}
 
 			}
@@ -83,7 +82,6 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 178.5, 100.5, 265.0, 87.0 ],
-					"presentation_linecount" : 6,
 					"text" : "4. Edit this message to subscibe to elektron.live channel\n\nsubscribe *channel* *messagetype* *userId*\n\n(where *userId* is optional)"
 				}
 
@@ -107,8 +105,8 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "bang" ],
-					"patching_rect" : [ 445.5, 178.5, 63.0, 22.0 ],
-					"text" : "metro 500"
+					"patching_rect" : [ 445.5, 178.5, 69.0, 22.0 ],
+					"text" : "metro 1000"
 				}
 
 			}
@@ -119,8 +117,8 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 445.5, 210.0, 326.0, 22.0 ],
-					"text" : "publish residence fsgatfaa \"Mr Max\" IMAGE images/test.jpg"
+					"patching_rect" : [ 445.5, 210.0, 349.0, 22.0 ],
+					"text" : "publish residence fsgatfaa \"Max user\" IMAGE images/output.jpg"
 				}
 
 			}
@@ -143,8 +141,8 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 645.0, 496.0, 185.0, 22.0 ],
-					"text" : "exportimage images/test.jpg jpeg"
+					"patching_rect" : [ 645.0, 496.0, 199.0, 22.0 ],
+					"text" : "exportimage images/output.jpg jpeg"
 				}
 
 			}
@@ -378,7 +376,7 @@
 					"numoutlets" : 1,
 					"offset" : [ 0.0, 0.0 ],
 					"outlettype" : [ "bang" ],
-					"patching_rect" : [ 848.5, 324.5, 305.0, 396.0 ],
+					"patching_rect" : [ 848.5, 320.5, 409.0, 334.0 ],
 					"viewvisibility" : 1
 				}
 
@@ -394,6 +392,8 @@
 					"saved_object_attributes" : 					{
 						"autostart" : 0,
 						"defer" : 0,
+						"node_bin_path" : "",
+						"npm_bin_path" : "",
 						"watch" : 0
 					}
 ,

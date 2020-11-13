@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 126.0, 79.0, 863.0, 751.0 ],
+		"rect" : [ 55.0, 109.0, 1175.0, 751.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -40,13 +40,92 @@
 		"assistshowspatchername" : 0,
 		"boxes" : [ 			{
 				"box" : 				{
+					"id" : "obj-10",
+					"maxclass" : "newobj",
+					"numinlets" : 2,
+					"numoutlets" : 2,
+					"outlettype" : [ "", "" ],
+					"patching_rect" : [ 473.0, 537.5, 55.0, 22.0 ],
+					"text" : "zl.slice 1"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-27",
+					"linecount" : 3,
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 473.0, 675.0, 150.0, 47.0 ],
+					"presentation_linecount" : 3,
+					"text" : "Getting just the \"value\" field of the latest subscibed message"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-25",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 473.0, 582.5, 72.0, 22.0 ],
+					"text" : "prepend set"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-24",
+					"maxclass" : "message",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 473.0, 631.0, 146.0, 22.0 ],
+					"text" : "56"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-19",
+					"maxclass" : "message",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 473.0, 457.0, 57.0, 22.0 ],
+					"text" : "get value"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-16",
+					"maxclass" : "newobj",
+					"numinlets" : 2,
+					"numoutlets" : 4,
+					"outlettype" : [ "dictionary", "", "", "" ],
+					"patching_rect" : [ 473.0, 495.5, 50.5, 22.0 ],
+					"saved_object_attributes" : 					{
+						"embed" : 0,
+						"parameter_enable" : 0,
+						"parameter_mappable" : 0
+					}
+,
+					"text" : "dict"
+				}
+
+			}
+, 			{
+				"box" : 				{
 					"id" : "obj-26",
 					"maxclass" : "slider",
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 870.0, 101.0, 21.0, 94.0 ]
+					"patching_rect" : [ 432.0, 174.5, 290.0, 21.0 ]
 				}
 
 			}
@@ -85,80 +164,13 @@
 			}
 , 			{
 				"box" : 				{
-					"id" : "obj-27",
-					"linecount" : 3,
-					"maxclass" : "comment",
-					"numinlets" : 1,
-					"numoutlets" : 0,
-					"patching_rect" : [ 458.0, 614.0, 150.0, 47.0 ],
-					"text" : "Getting just the \"value\" field of the latest subscibed message"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"id" : "obj-25",
-					"maxclass" : "newobj",
-					"numinlets" : 1,
-					"numoutlets" : 1,
-					"outlettype" : [ "" ],
-					"patching_rect" : [ 458.0, 497.0, 72.0, 22.0 ],
-					"text" : "prepend set"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"id" : "obj-24",
-					"linecount" : 4,
-					"maxclass" : "message",
-					"numinlets" : 2,
-					"numoutlets" : 1,
-					"outlettype" : [ "" ],
-					"patching_rect" : [ 458.0, 549.0, 50.0, 62.0 ],
-					"text" : "dictionary u140000498"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"id" : "obj-19",
-					"maxclass" : "message",
-					"numinlets" : 2,
-					"numoutlets" : 1,
-					"outlettype" : [ "" ],
-					"patching_rect" : [ 458.0, 401.5, 57.0, 22.0 ],
-					"text" : "get value"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"id" : "obj-16",
-					"maxclass" : "newobj",
-					"numinlets" : 2,
-					"numoutlets" : 4,
-					"outlettype" : [ "dictionary", "", "", "" ],
-					"patching_rect" : [ 458.0, 442.0, 50.5, 22.0 ],
-					"saved_object_attributes" : 					{
-						"embed" : 0,
-						"parameter_enable" : 0,
-						"parameter_mappable" : 0
-					}
-,
-					"text" : "dict"
-				}
-
-			}
-, 			{
-				"box" : 				{
 					"id" : "obj-14",
 					"linecount" : 3,
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 432.0, 100.5, 416.0, 47.0 ],
-					"text" : "4. Edit this message to send a message to elektron.live channel\n\npublish *channel* *userid* *username* *messagecontent* *messagetype*"
+					"patching_rect" : [ 432.0, 100.5, 536.0, 47.0 ],
+					"text" : "4. Edit this message to send a message to elektron.live channel\n\npublish *channel* *userid* *username* *messagecontent* *messagetype* *messagevalue*"
 				}
 
 			}
@@ -169,20 +181,20 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 432.0, 210.0, 260.0, 22.0 ],
-					"text" : "publish hackaton fsgatfaa \"Mr Max\" SLIDER $1"
+					"patching_rect" : [ 432.0, 210.0, 290.0, 22.0 ],
+					"text" : "publish residence fsgatfaa \"Max user\" ANYTHING $1"
 				}
 
 			}
 , 			{
 				"box" : 				{
 					"id" : "obj-9",
-					"linecount" : 7,
+					"linecount" : 6,
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 159.5, 100.5, 265.0, 100.0 ],
-					"text" : "3. Edit this message to subscibe to elektron.live channel\n\nsubscribe *channel* *messagetype*\n\nYou can now use chat and like button in elektron.live"
+					"patching_rect" : [ 159.5, 100.5, 265.0, 87.0 ],
+					"text" : "3. Edit this message to subscibe to elektron.live channel\n\nsubscribe *channel* *messagetype* *userId*\n\nwhere *userId* is optional"
 				}
 
 			}
@@ -205,8 +217,8 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 159.5, 210.0, 235.0, 22.0 ],
-					"text" : "subscribe hackaton CHAT IMAGE SLIDER"
+					"patching_rect" : [ 159.5, 210.0, 180.0, 22.0 ],
+					"text" : "subscribe residence ANYTHING"
 				}
 
 			}
@@ -216,7 +228,7 @@
 					"maxclass" : "dict.view",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 183.5, 442.0, 212.0, 223.0 ]
+					"patching_rect" : [ 183.5, 442.0, 211.0, 211.0 ]
 				}
 
 			}
@@ -282,7 +294,7 @@
 					"numoutlets" : 1,
 					"offset" : [ 0.0, 0.0 ],
 					"outlettype" : [ "bang" ],
-					"patching_rect" : [ 680.5, 324.5, 401.0, 270.0 ],
+					"patching_rect" : [ 680.5, 324.5, 400.0, 220.0 ],
 					"viewvisibility" : 1
 				}
 
@@ -298,6 +310,8 @@
 					"saved_object_attributes" : 					{
 						"autostart" : 0,
 						"defer" : 0,
+						"node_bin_path" : "",
+						"npm_bin_path" : "",
 						"watch" : 0
 					}
 ,
@@ -322,6 +336,13 @@
 			}
 , 			{
 				"patchline" : 				{
+					"destination" : [ "obj-25", 0 ],
+					"source" : [ "obj-10", 1 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
 					"destination" : [ "obj-1", 0 ],
 					"source" : [ "obj-12", 0 ]
 				}
@@ -329,8 +350,8 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-25", 0 ],
-					"source" : [ "obj-16", 0 ]
+					"destination" : [ "obj-10", 0 ],
+					"source" : [ "obj-16", 1 ]
 				}
 
 			}
@@ -410,7 +431,7 @@
  ],
 		"dependency_cache" : [ 			{
 				"name" : "ws_max.js",
-				"bootpath" : "~/projects/ws_max",
+				"bootpath" : "~/projects/example_max",
 				"patcherrelativepath" : ".",
 				"type" : "TEXT",
 				"implicit" : 1
