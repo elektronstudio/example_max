@@ -46,6 +46,13 @@ maxApi.addHandler("subscribe", (channel, type, userId = null) => {
 });
 
 maxApi.addHandler("publish", (channel, userId, userName, type, value) => {
+  if (type === "IMAGE") {
+    const encoding = "base64";
+    const data = fs.readFileSync(`${__dirname}/${value}`).toString(encoding);
+    const mimeType = "image/jpeg";
+    const dataUrl = `data:${mimeType};${encoding},${data}`;
+    value = dataUrl;
+  }
   ws.send(
     createMessage({
       channel: channel,
