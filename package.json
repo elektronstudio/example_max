@@ -1,0 +1,9 @@
+{
+  "name": "ws_max",
+  "private": true,
+  "version": "0.0.1",
+  "dependencies": {
+    "parse-data-url": "^3.0.0",
+    "ws": "^7.3.1"
+  }
+}
