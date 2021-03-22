@@ -13,11 +13,11 @@ const Websocket = require("ws");
 
 // Set up Websocket endpoint
 
-const wsUrl = "wss://ws-fggq5.ondigitalocean.app";
+const url = "wss://ws.elektron.art";
 
 // Establish Websocket connection
 
-const ws = new Websocket(wsUrl);
+const ws = new Websocket(url);
 
 // Keep websocket connection alive
 
