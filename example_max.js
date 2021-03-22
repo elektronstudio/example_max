@@ -64,30 +64,34 @@ maxApi.addHandler("subscribe", (channel, type, userId = null) => {
 
 // Handle the "publish" message from Max
 
-maxApi.addHandler("publish", (channel, userId, userName, type, value) => {
-  // Special handling for images: on "IMAGE" type we read the image path
-  // passed from Max ("value"), read the file and encode it as DataURL
+maxApi.addHandler(
+  "publish",
+  (channel, userId, userName, type, value, store = false) => {
+    // Special handling for images: on "IMAGE" type we read the image path
+    // passed from Max ("value"), read the file and encode it as DataURL
 
-  if (type === "IMAGE") {
-    const encoding = "base64";
-    const data = fs.readFileSync(`${__dirname}/${value}`).toString(encoding);
-    const mimeType = "image/jpeg";
-    const dataUrl = `data:${mimeType};${encoding},${data}`;
-    value = dataUrl;
+    if (type === "IMAGE") {
+      const encoding = "base64";
+      const data = fs.readFileSync(`${__dirname}/${value}`).toString(encoding);
+      const mimeType = "image/jpeg";
+      const dataUrl = `data:${mimeType};${encoding},${data}`;
+      value = dataUrl;
+    }
+
+    // Send websocket message
+
+    ws.send(
+      createMessage({
+        channel: channel,
+        type: type,
+        value: value,
+        userId: userId,
+        userName: userName,
+        store: !!store,
+      })
+    );
   }
-
-  // Send websocket message
-
-  ws.send(
-    createMessage({
-      channel: channel,
-      type: type,
-      value: value,
-      userId: userId,
-      userName: userName,
-    })
-  );
-});
+);
 
 // Helper function to create a websocket message
 
