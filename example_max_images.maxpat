@@ -397,7 +397,7 @@
 						"watch" : 0
 					}
 ,
-					"text" : "node.script ws_max.js"
+					"text" : "node.script example_max.js"
 				}
 
 			}
