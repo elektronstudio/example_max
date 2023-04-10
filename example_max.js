@@ -107,6 +107,7 @@ maxApi.addHandler("gptinput", async (gptinput) => {
     prompt: gptinput,
   });
   const gptoutput = completion.data.choices[0].text;
+  maxApi.post({ gptoutput });
   maxApi.outlet("gptoutput", { gptoutput });
 });
 
