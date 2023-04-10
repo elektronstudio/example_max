@@ -13,7 +13,7 @@ const Websocket = require("ws");
 
 // Set up Websocket endpoint
 
-const url = "wss://ws.elektron.art";
+const url = "wss://data.elektron.art";
 
 // Establish Websocket connection
 
@@ -66,7 +66,7 @@ maxApi.addHandler("subscribe", (channel, type, userId = null) => {
 
 maxApi.addHandler(
   "publish",
-  (channel, userId, userName, type, value, store = false) => {
+  (channel, userid, username, type, value, store = false) => {
     // Special handling for images: on "IMAGE" type we read the image path
     // passed from Max ("value"), read the file and encode it as DataURL
 
@@ -83,10 +83,10 @@ maxApi.addHandler(
     ws.send(
       createMessage({
         channel: channel,
-        type: type,
-        value: value,
-        userId: userId,
-        userName: userName,
+        type,
+        value,
+        userid,
+        username,
         store: !!store,
       })
     );
@@ -106,8 +106,8 @@ const createMessage = (message) => {
     datetime: new Date().toISOString(),
     type: "",
     channel: "",
-    userId: "",
-    userName: "",
+    userid: "",
+    username: "",
     value: "",
     ...message,
   });
