@@ -93,6 +93,23 @@ maxApi.addHandler(
   }
 );
 
+require("dotenv").config();
+const { Configuration, OpenAIApi } = require("openai");
+const apiKey = process.env.OPENAI_API_KEY;
+const configuration = new Configuration({
+  apiKey,
+});
+const openai = new OpenAIApi(configuration);
+
+maxApi.addHandler("gptinput", async (gptinput) => {
+  const completion = await openai.createCompletion({
+    model: "text-davinci-003",
+    prompt: gptinput,
+  });
+  const gptoutput = completion.data.choices[0].text;
+  maxApi.outlet("gptoutput", { gptoutput });
+});
+
 // Helper function to create a websocket message
 
 const createMessage = (message) => {
