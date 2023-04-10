@@ -10,7 +10,7 @@ See more docs at https://github.com/elektronstudio/docs
 
    ![](./gpt.png)
 
-2. Update `examples_max.js` from the github page.
+2. Update `examples_max.js` from this page https://raw.githubusercontent.com/elektronstudio/example_max/master/example_max.js
 
 3. Create openai.com account, add billing info and Generate a API key https://platform.openai.com/account/api-keys. Copy the key to clipboard.
 
