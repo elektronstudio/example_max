@@ -12,8 +12,7 @@ See more docs at https://github.com/elektronstudio/docs
 
 2. Update `examples_max.js` from the github page.
 
-3. Create openai.com account, add billing info and Generate a API key https://
-   platform.openai.com/account/api-keys. Copy the key to clipboard.
+3. Create openai.com account, add billing info and Generate a API key https://platform.openai.com/account/api-keys. Copy the key to clipboard.
 
 4. Create a file in the same directory as the examples_max.js, called `.env`
 
